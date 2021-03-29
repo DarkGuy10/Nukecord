@@ -47,8 +47,8 @@ Because why not! <br>
 Also, this is **not** related to Divine's raid in Otogakure in any way. (except the fact that it gave me the idea to make this lol)
 
 # Credits
-https://github.com/MauriceButler/badwords
-https://github.com/Tyrrrz/DiscordChatExporter
-https://github.com/Rapptz/discord.py
+https://github.com/MauriceButler/badwords <br>
+https://github.com/Tyrrrz/DiscordChatExporter <br>
+https://github.com/Rapptz/discord.py <br>
 
 ##### Code with ❤️ at GitHub.
