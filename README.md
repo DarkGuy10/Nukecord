@@ -25,7 +25,7 @@ py -3 -m pip install -U discord.py
 ## How to use?
 1. Clone this repositiory (or download and extract the .zip)
 ```
-https://github.com/DarkGuy10/N-u-ked
+git https://github.com/DarkGuy10/N-u-ked
 ```
 2. Get your Discord user token. Don't know how? [Click here](https://github.com/Tyrrrz/DiscordChatExporter/wiki/Obtaining-Token-and-Channel-IDs#how-to-get-a-user-token)
 
