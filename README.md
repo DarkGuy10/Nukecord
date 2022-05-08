@@ -3,6 +3,12 @@
 
 **I am not responsible for whatever you use the code for!!!**
 
+# Discontinuation
+
+The python code will get discontinued, and remain in the `legacy` branch.
+
+The entire repo is going to get rewritten using NodeJS and Typescript.
+
 # Warning!
 Self bots like this break Discord's TOS and hence your account may get **banned**. <br>
 
