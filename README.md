@@ -1,10 +1,8 @@
 <h3 align="center">
-  <!-- after we get a logo
-	<img src="https://raw.githubusercontent.com/catppuccin/catppuccin/dev/assets/logos/exports/1544x1544_circle.png" width="100" alt="Logo"/><br/>
-  -->
-	<img src="" height="30" width="0px"/>
+	<img src="https://github.com/DarkGuy10/Nukecord/blob/master/assets/Logo.png" alt="Logo"/><br/>
+	<img src="" alt="" height="30"/>
 	「Nukecord」
-	<img src="" height="30" width="0px"/>
+	<img src="" alt="" height="30"/>
 </h3>
 
 <p align="center">
@@ -21,10 +19,6 @@
 Nukecord is a discord selfbot for server-raiding written in Typescript. There isn't much to say, it just works!<br />
 The legacy python3 code can be found in the legacy branch.
 </p>
-
-&nbsp;
-
-<img align="center" src="https://github.com/DarkGuy10/Nukecord/blob/master/demo/demo.png?raw=true" alt="Nukecord in action" />
 
 &nbsp;
 
@@ -73,6 +67,12 @@ You can set your `NUKECORD_SELFBOT_TOKEN` environment variable to your user toke
 ### 🔧 Building from Source
 
 This project can be built from source (if you're into that <img src="https://cdn.discordapp.com/emojis/960552351146578032.webp?size=96&quality=lossless" alt=":ZeroTwo_Smirk:" title=":ZeroTwo_Smirk:" height="22" width="22"  />)
+
+#### Prerequisites
+
+-   [Git CLI](https://git-scm.com/downloads)
+-   [NodeJS](https://nodejs.org/en/download/)
+-   [Yarn](https://classic.yarnpkg.com/lang/en/docs/install)
 
 #### Building
 
@@ -140,4 +140,4 @@ Nukecord is released under the MIT license, which grants the following permissio
 -   Modification
 -   Private use
 
-For more convoluted language, see the [LICENSE](https://github.com/darkguy10/Nukecord/blob/main/LICENSE.md).
+For more convoluted language, see the [LICENSE](https://github.com/darkguy10/Nukecord/blob/master/LICENSE.md).
