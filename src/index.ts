@@ -76,7 +76,6 @@ client.once('ready', async () => {
 			type: 'multiselect',
 			name: 'selectedRaids',
 			message: 'Choose the raid modules to execute',
-			hint: '- ←/→/[space] to select. a to toggle all. enter/return to submit.',
 			choices: permittedRaids.map(raid => ({
 				title: raid.name,
 				value: raid.name,
