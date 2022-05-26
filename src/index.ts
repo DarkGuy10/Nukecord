@@ -16,7 +16,7 @@ import { userAbortError } from './errors.js'
 
 /* 
 	Autopilot Mode: [To add]
-	--token (if exists) takes priority over NUKED_SELFBOT_TOKEN 
+	--token (if exists) takes priority over NUKECORD_SELFBOT_TOKEN 
 	--guild-id must be provided
 */
 
@@ -114,8 +114,8 @@ client.once('ready', async () => {
 
 // ================================= Piece Functions
 const getToken = async () => {
-	if (process.env.NUKED_SELFBOT_TOKEN) {
-		Log.info(`Token found from env: ${chalk.bold(process.env.NUKED_SELFBOT_TOKEN)}`)
+	if (process.env.NUKECORD_SELFBOT_TOKEN) {
+		Log.info(`Token found from env: ${chalk.bold(process.env.NUKECORD_SELFBOT_TOKEN)}`)
 		const { _useFromEnv } = await prompts(
 			{
 				type: 'confirm',
@@ -125,7 +125,7 @@ const getToken = async () => {
 			},
 			{ onCancel }
 		)
-		if (_useFromEnv) return process.env.NUKED_SELFBOT_TOKEN
+		if (_useFromEnv) return process.env.NUKECORD_SELFBOT_TOKEN
 	}
 
 	const { token } = await prompts(
