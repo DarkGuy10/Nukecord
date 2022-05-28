@@ -20,7 +20,7 @@
 		"dev": "NODE_ENV=development node --loader ts-node/esm ./src/index.ts",
 		"build": "tsc",
 		"format": "prettier -w .",
-		"prepare": "yarn build"
+		"prepack": "yarn build"
 	},
 	"repository": {
 		"type": "git",
