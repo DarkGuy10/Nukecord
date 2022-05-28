@@ -75,7 +75,7 @@ ${process.env.NODE_ENV === 'development' ? message.stack : ''}`
 	 * Print a progress message
 	 * @param message Message to print
 	 */
-	static porgress(message: any): void {
+	static progress(message: any): void {
 		console.log(`${this.prefix('PROGRESS')} ${this._colorLevels.PROGRESS(message)}`)
 	}
 
