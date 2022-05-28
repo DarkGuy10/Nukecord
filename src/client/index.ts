@@ -16,7 +16,7 @@ class NukecordClient extends Client {
 	 */
 	async getReady(): Promise<void> {
 		const promise = new Promise<void>(resolve => {
-			this.on('ready', () => {
+			this.once('ready', () => {
 				resolve()
 			})
 		})
