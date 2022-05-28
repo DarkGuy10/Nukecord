@@ -2,12 +2,13 @@
 import 'dotenv/config'
 import chalk from 'chalk'
 import prompts from 'prompts'
-import { Client, Collection, Guild } from 'discord.js-selfbot-v13'
+import { Collection, Guild } from 'discord.js-selfbot-v13'
 import { Ora } from 'ora'
 import { Log, onCancel, spinner, sleep } from './utils/index.js'
 import raidModules from './raids/index.js'
 import { Raid, RaidName } from './typings/index.js'
 import { userAbortError } from './errors.js'
+import NukecordClient from './client/index.js'
 
 /* 
 	"Hisashiburi, Handler One"
@@ -29,86 +30,8 @@ let token: string
  */
 let _spinner: Ora
 
-const client = new Client({
+const client = new NukecordClient({
 	intents: ['GUILDS'],
-})
-
-client.once('ready', async () => {
-	_spinner.stop()
-	Log.success(
-		`Logged in as ${chalk.bold(
-			`${client.user?.username}#${client.user?.discriminator}`
-		)} ${chalk.gray.dim(`[ID: ${client.user?.id}]`)}`
-	)
-
-	await sleep(500)
-
-	Log.info(`Retrieved ${chalk.bold(`${client.guilds.cache.size} guilds`)}`)
-
-	const { target }: { target: Guild } = await prompts(
-		{
-			type: 'select',
-			name: 'target',
-			message: 'Select target guild',
-			choices: client.guilds.cache.map(guild => ({
-				title: guild.name,
-				description: `[ID: ${guild.id}]`,
-				value: guild.id,
-			})),
-			initial: 0,
-			hint: '- Use arrow-keys. Return or Enter to submit.',
-			format: id => client.guilds.cache.get(id),
-		},
-		{ onCancel }
-	)
-
-	const permittedRaids = raidModules.filter(
-		raid => target.me?.permissions.has(raid.permission) ?? false
-	)
-
-	if (!permittedRaids.size) {
-		Log.warn("Client doesn't have permissions for executing any raid")
-		process.exit(0)
-	}
-
-	const { selectedRaids }: { selectedRaids: Collection<RaidName, Raid> } = await prompts(
-		{
-			type: 'multiselect',
-			name: 'selectedRaids',
-			message: 'Choose the raid modules to execute',
-			choices: permittedRaids.map(raid => ({
-				title: raid.name,
-				value: raid.name,
-			})),
-			min: 1,
-			format: (raidNames: RaidName[]) =>
-				permittedRaids.filter(raid => raidNames.includes(raid.name)),
-		},
-		{ onCancel }
-	)
-
-	Log.warn(
-		`Think twice before moving ahead, violence isn't always the answer (but sometimes it is)`
-	)
-
-	const { _confirmRaid } = await prompts(
-		{
-			type: 'confirm',
-			name: '_confirmRaid',
-			message: `Confirm raid execution on ${chalk.cyan(
-				target.name
-			)} with modules [${selectedRaids.map(raid => raid.name).join(', ')}] ?`,
-			initial: true,
-		},
-		{ onCancel }
-	)
-
-	if (!_confirmRaid) throw userAbortError
-
-	for (const raid of selectedRaids.values()) await raid.execute(target)
-
-	Log.success('Raid completed, exitting script.')
-	process.exit(0)
 })
 
 // ================================= Piece Functions
@@ -160,4 +83,79 @@ try {
 	throw error
 }
 
-// =================================  Rest Of Script Is In The ready Event
+await client.getReady()
+_spinner.stop()
+Log.success(
+	`Logged in as ${chalk.bold(
+		`${client.user?.username}#${client.user?.discriminator}`
+	)} ${chalk.gray.dim(`[ID: ${client.user?.id}]`)}`
+)
+
+await sleep(500)
+
+Log.info(`Retrieved ${chalk.bold(`${client.guilds.cache.size} guilds`)}`)
+
+const { target }: { target: Guild } = await prompts(
+	{
+		type: 'select',
+		name: 'target',
+		message: 'Select target guild',
+		choices: client.guilds.cache.map(guild => ({
+			title: guild.name,
+			description: `[ID: ${guild.id}]`,
+			value: guild.id,
+		})),
+		initial: 0,
+		hint: '- Use arrow-keys. Return or Enter to submit.',
+		format: id => client.guilds.cache.get(id),
+	},
+	{ onCancel }
+)
+
+const permittedRaids = raidModules.filter(
+	raid => target.me?.permissions.has(raid.permission) ?? false
+)
+
+if (!permittedRaids.size) {
+	Log.warn("Client doesn't have permissions for executing any raid")
+	process.exit(0)
+}
+
+const { selectedRaids }: { selectedRaids: Collection<RaidName, Raid> } = await prompts(
+	{
+		type: 'multiselect',
+		name: 'selectedRaids',
+		message: 'Choose the raid modules to execute',
+		choices: permittedRaids.map(raid => ({
+			title: raid.name,
+			value: raid.name,
+		})),
+		min: 1,
+		format: (raidNames: RaidName[]) =>
+			permittedRaids.filter(raid => raidNames.includes(raid.name)),
+	},
+	{ onCancel }
+)
+
+Log.warn(`Think twice before moving ahead, violence isn't always the answer (but sometimes it is)`)
+
+const { _confirmRaid } = await prompts(
+	{
+		type: 'confirm',
+		name: '_confirmRaid',
+		message: `Confirm raid execution on ${chalk.cyan(target.name)} with modules [${selectedRaids
+			.map(raid => raid.name)
+			.join(', ')}] ?`,
+		initial: true,
+	},
+	{ onCancel }
+)
+
+if (!_confirmRaid) throw userAbortError
+
+for (const raid of selectedRaids.values()) await raid.execute(target)
+
+Log.success('Raid completed, exitting script.')
+process.exit(0)
+
+// =================================  Bye Bye
