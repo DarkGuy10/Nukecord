@@ -28,9 +28,9 @@
 	},
 	"packageManager": "yarn@3.2.1",
 	"dependencies": {
-		"chalk": "4.1.2",
-		"discord.js-selfbot-v13": "^2.0.4",
-		"dotenv": "^16.0.0",
+		"chalk": "^5.0.1",
+		"discord.js-selfbot-v13": "^2.0.43",
+		"dotenv": "^16.0.1",
 		"ora": "^6.1.0",
 		"prompts": "^2.4.2"
 	},
@@ -40,8 +40,8 @@
 		"@types/ws": "^8.5.3",
 		"@types/yargs": "^17.0.10",
 		"prettier": "^2.6.2",
-		"ts-node": "^10.7.0",
-		"typescript": "^4.6.4"
+		"ts-node": "^10.8.1",
+		"typescript": "^4.7.3"
 	},
 	"keywords": [
 		"N-u-ked",
