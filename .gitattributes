@@ -1,0 +1,5 @@
+# All .ts files are Typescript :)
+*.ts linguist-language=Typescript
+
+# Don't stat yarn releases
+.yarn/releases/* linguist-vendored
