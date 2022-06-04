@@ -14,13 +14,12 @@ class NukecordClient extends Client {
 	 * So we don't have to split the code into two parts.
 	 * Straight up butcher the event emitter lmao.
 	 */
-	async getReady(): Promise<void> {
-		const promise = new Promise<void>(resolve => {
+	getReady(): Promise<void> {
+		return new Promise(resolve => {
 			this.once('ready', () => {
 				resolve()
 			})
 		})
-		return promise
 	}
 }
 
