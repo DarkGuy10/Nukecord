@@ -15,7 +15,7 @@ class Log {
 		ERROR: chalk.red,
 		SUCCESS: chalk.green,
 		PROGRESS: chalk.magenta,
-		WARN: chalk.hex('#FFA500'),
+		WARN: chalk.yellow,
 	}
 
 	/**
