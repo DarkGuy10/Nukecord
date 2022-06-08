@@ -7,8 +7,8 @@
 		"url": "https://github.com/DarkGuy10",
 		"email": "HarperBurn@protonmail.ch"
 	},
-	"main": "./lib/index.js",
-	"bin": "./lib/index.js",
+	"main": "./lib/cli.js",
+	"bin": "./lib/cli.js",
 	"license": "MIT",
 	"type": "module",
 	"files": [
@@ -17,7 +17,7 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"start": "node . ",
-		"dev": "NODE_ENV=development node --loader ts-node/esm ./src/index.ts",
+		"dev": "NODE_ENV=development node --loader ts-node/esm ./src/cli.ts",
 		"build": "tsc",
 		"format": "prettier -w .",
 		"prepack": "yarn build"

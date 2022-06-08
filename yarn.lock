@@ -2208,7 +2208,7 @@ __metadata:
     typescript: ^4.7.3
     yargs: ^17.5.1
   bin:
-    nukecord: ./lib/index.js
+    nukecord: ./lib/cli.js
   languageName: unknown
   linkType: soft
 
