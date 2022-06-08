@@ -7,8 +7,8 @@
 		"url": "https://github.com/DarkGuy10",
 		"email": "HarperBurn@protonmail.ch"
 	},
-	"main": "./lib/index.js",
-	"bin": "./lib/index.js",
+	"main": "./lib/cli.js",
+	"bin": "./lib/cli.js",
 	"license": "MIT",
 	"type": "module",
 	"files": [
@@ -17,7 +17,7 @@
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
 		"start": "node . ",
-		"dev": "NODE_ENV=development node --loader ts-node/esm ./src/index.ts",
+		"dev": "NODE_ENV=development node --loader ts-node/esm ./src/cli.ts",
 		"build": "tsc",
 		"format": "prettier -w .",
 		"prepack": "yarn build"
@@ -32,7 +32,8 @@
 		"discord.js-selfbot-v13": "^2.2.0",
 		"dotenv": "^16.0.1",
 		"ora": "^6.1.0",
-		"prompts": "^2.4.2"
+		"prompts": "^2.4.2",
+		"yargs": "^17.5.1"
 	},
 	"devDependencies": {
 		"@types/node": "^17.0.31",
