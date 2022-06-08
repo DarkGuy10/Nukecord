@@ -32,7 +32,8 @@
 		"discord.js-selfbot-v13": "^2.2.0",
 		"dotenv": "^16.0.1",
 		"ora": "^6.1.0",
-		"prompts": "^2.4.2"
+		"prompts": "^2.4.2",
+		"yargs": "^17.5.1"
 	},
 	"devDependencies": {
 		"@types/node": "^17.0.31",
