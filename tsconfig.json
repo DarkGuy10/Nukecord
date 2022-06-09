@@ -12,5 +12,6 @@
 		"removeComments": true
 	},
 	"include": ["src"],
+	"files": ["src/globals.d.ts"],
 	"exclude": ["node_modules", "**/node_modules/*", "lib"]
 }

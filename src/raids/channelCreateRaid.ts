@@ -1,8 +1,8 @@
 import { Guild } from 'discord.js-selfbot-v13'
 import { Raid } from './../typings/index.js'
 import { Log, randomFrom, spinner } from './../utils/index.js'
-import swearWords from '../assets/swearWords.js'
 import chalk from 'chalk'
+import swearWords from 'badwords/array.js'
 
 const channelCreateRaid: Raid = {
 	name: 'CHANNEL_CREATE_RAID',
