@@ -13,7 +13,7 @@ const guildInfoRaid: Raid = {
 			name: 'NUKED',
 			description:
 				'THIS SERVER WAS NUKED HAHA. GET REKT!!! THE MADLAD USED NUKECORD SCRIPT!!!',
-			icon: `https://raw.githubusercontent.com/DarkGuy10/Nukecord/master/src/assets/CryingMan.png`,
+			icon: `https://raw.githubusercontent.com/DarkGuy10/Nukecord/master/assets/CryingMan.png`,
 		})
 
 		_spinner.stop()
