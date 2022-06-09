@@ -557,6 +557,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"badwords@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "badwords@npm:1.0.0"
+  checksum: 82065501b489f6a3d3d7a386c8befa17a295cbbe5b65edadd5ec798401f9be204d185c5e5873b6b056911919dc0727e1420868bf18fa06c72dec61664ddc88a4
+  languageName: node
+  linkType: hard
+
 "balanced-match@npm:^1.0.0":
   version: 1.0.2
   resolution: "balanced-match@npm:1.0.2"
@@ -2198,6 +2205,7 @@ __metadata:
     "@types/prompts": ^2.0.14
     "@types/ws": ^8.5.3
     "@types/yargs": ^17.0.10
+    badwords: ^1.0.0
     chalk: ^5.0.1
     discord.js-selfbot-v13: ^2.2.0
     dotenv: ^16.0.1
