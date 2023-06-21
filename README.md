@@ -51,7 +51,7 @@ You can use `npx` to directly download and run the executable.
 Fire up a terminal/command prompt and type:
 
 ```
-npx nukecord
+npx nukecord@latest
 ```
 
 and hit enter. Press y if it prompt's to install the packges.
