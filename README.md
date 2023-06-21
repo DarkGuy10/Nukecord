@@ -1,5 +1,5 @@
 <h3 align="center">
-	<img src="https://github.com/DarkGuy10/Nukecord/blob/master/assets/Logo.png" alt="Logo"/><br/>
+	<img src="https://github.com/DarkGuy10/Nukecord/blob/main/assets/Logo.png" alt="Logo"/><br/>
 	<img src="" alt="" height="30"/>
 	「Nukecord」
 	<img src="" alt="" height="30"/>
