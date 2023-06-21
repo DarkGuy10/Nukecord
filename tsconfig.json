@@ -1,15 +1,16 @@
 {
 	"compilerOptions": {
-		"module": "ESNext",
-		"moduleResolution": "Node",
 		"target": "ESNext",
-		"strict": true,
+		"incremental": true,
+		"module": "Node16",
 		"rootDir": "./src",
-		"outDir": "./lib",
-		"baseUrl": "./",
-		"esModuleInterop": true,
+		"moduleResolution": "nodenext",
+		"forceConsistentCasingInFileNames": true,
+		"strict": true,
 		"skipLibCheck": true,
-		"removeComments": true
+		"outDir": "./lib",
+		"declaration": true,
+		"esModuleInterop": true
 	},
 	"include": ["src"],
 	"files": ["src/globals.d.ts"],
