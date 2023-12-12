@@ -12,7 +12,9 @@ const __dirname = dirname(__filename)
  */
 const raidModules: Collection<RaidName, Raid> = new Collection()
 
-const raidFiles = readdirSync(__dirname).filter(file => !file.startsWith('index'))
+const raidFiles = readdirSync(__dirname).filter(
+	file => !file.endsWith('.d.ts') && !file.startsWith('index')
+)
 for (const raidFile of raidFiles) {
 	const raid: Raid = (await import(join('file://', __dirname, raidFile))).default
 	raidModules.set(raid.name, raid)
