@@ -11,11 +11,11 @@ class Log {
 	 * Colors for different log levels
 	 */
 	private static _colorLevels = {
-		INFO: chalk.cyan,
-		ERROR: chalk.red,
-		SUCCESS: chalk.green,
-		PROGRESS: chalk.magenta,
-		WARN: chalk.yellow,
+		INFO: chalk.hex('#a3b9ef'),
+		ERROR: chalk.hex('#f38ba8'),
+		SUCCESS: chalk.hex('#a6e3a1'),
+		PROGRESS: chalk.hex('#f5c2e7'),
+		WARN: chalk.hex('#f9e2af'),
 	}
 
 	/**
