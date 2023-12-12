@@ -1,14 +1,10 @@
-import { Client, ClientOptions } from 'discord.js-selfbot-v13'
+import { Client } from 'discord.js-selfbot-v13'
 
 /**
  * The NukecordClient that extends djs-selfbot client
  * Slightly modified to match our needs
  */
 class NukecordClient extends Client {
-	constructor(props: ClientOptions) {
-		super(props)
-	}
-
 	/**
 	 * Wait for the client to get ready.
 	 * So we don't have to split the code into two parts.

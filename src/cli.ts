@@ -38,9 +38,7 @@ const argv = yargs(hideBin(process.argv))
 
 let _spinner = spinner()
 
-const client = new NukecordClient({
-	intents: ['GUILDS'],
-})
+const client = new NukecordClient()
 
 let targetGuild: Guild
 
