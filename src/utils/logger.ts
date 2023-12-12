@@ -101,7 +101,7 @@ ${process.env.NODE_ENV === 'development' ? message.stack : ''}`
 	                      ${chalk.gray.italic(`"we do a bit of trolling"
 	                            - @DarkGuy10`)}
 `
-		console.log(chalk.blue(bannerText))
+		console.log(chalk.hex('#a3b9ef')(bannerText))
 	}
 }
 
